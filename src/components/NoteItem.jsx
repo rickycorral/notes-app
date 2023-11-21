@@ -14,11 +14,14 @@ export function generateRandomGradientColor() {
 const NoteItem = ({ note }) => {
   // Use the generateRandomGradientColor function to get the gradient color
   const gradientColor = generateRandomGradientColor();
+const notePreview = note.details.length > 15 ? note.details.substring(0, 15) + '...' : note.details;
 
   return (
     <Link to={`/edit-note/${note.id}`} className='note' style={{ background: gradientColor }}>
       <div className="note-content">
         <h4>{note.title}</h4>
+        <p className="note-preview">{notePreview}</p> 
+
         <div className="note-footer">
           <p className="note-date">{note.date}</p>
         </div>
