@@ -5,6 +5,7 @@ import EditNote from "./pages/EditNote";
 import { useEffect } from "react";
 import { generateRandomGradientColor } from "./components/NoteItem"; // Import the function from NoteItem.jsx
 
+import { HashRouter, Switch } from 'react-router-dom';
 
 import { useState } from "react";
 
@@ -23,7 +24,7 @@ const App = () => {
 
   return (
     <main id="app">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route
             path="/"
@@ -38,7 +39,7 @@ const App = () => {
             element={<EditNote notes={notes} setNotes={setNotes} gradientColor={gradientColor} />} // Pass gradientColor as a prop to EditNote
           />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </main>
   )
 }
